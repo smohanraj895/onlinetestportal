@@ -1,0 +1,169 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Online Test</title>
+		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="icon" href="images/icon.png"/>  
+		
+	</head>
+	<body>
+		<header>
+			<img src="images/inicon.png" alt="test img">
+			<h1>Html Online Test</h1>
+			<p id="p1">Total marks:5</p>
+			<p id="p2">Time:<span id="timer" style="color:red;"><b>60</b></span> secs</p>
+		</header>
+		<section id="sec0">
+			<input id="startbtn" type="button" value="Start Test" onclick="mytime()">
+			<p>By sivaprakash</p>
+		</section>
+		<section id="sec1">
+			<form>	
+				<p id="p3" ><b>1.What Is HTML?</b></p>
+				<div id="que1">
+					<input type="radio" name="q1"value="opt1">Hyper Tool Multi Language<br/>
+					<input type="radio" name="q1"value="opt2">Hyper Text Markup Language<br/>
+					<input type="radio" name="q1"value="opt3">Hierarical Tool for Multi Language<br/>
+					<input type="radio" name="q1"value="opt4">Hyper Text Multi Language<br/><br/>
+				</div>
+
+                <p id="p4"><b> 2.How Do I Add Scrolling Text To My Page?</b></p>
+				<div id="que2">
+					<input type="radio" name="q2"value="opt1">Scroll<br/>
+					<input type="radio" name="q2"value="opt2">Marquee<br/>
+					<input type="radio" name="q2"value="opt3">Circuler<br/>
+					<input type="radio" name="q2"value="opt4">None Of The Above <br/><br/>
+				</div>
+				
+				<p id="p5"><b> 3.Choose The Correct HTML Tag For The Largest Heading?</b></p>
+				<div id="que3">
+					<input type="radio" name="q3"value="opt1">H6<br/>
+					<input type="radio" name="q3"value="opt2">Heading<br/>
+					<input type="radio" name="q3"value="opt3">Head<br/>
+					<input type="radio" name="q3"value="opt4">H1 <br/><br/>
+				</div>
+				
+				<p id="p6"><b> 4.How To Save The HTML File?</b></p>
+				<div id="que4">
+					<input type="radio" name="q4"value="opt1">.htm<br/>
+					<input type="radio" name="q4"value="opt2">.html<br/>
+					<input type="radio" name="q4"value="opt3">Any Of The Above<br/>
+					<input type="radio" name="q4"value="opt4">none of these<br/><br/>
+				</div>
+				
+				<p id="p7"><b> 5.Which one is HTML Attribute?</b></p>
+				<div id="que5">
+					<input type="radio" name="q5"value="opt1">Edit<br/>
+					<input type="radio" name="q5"value="opt2">Type<br/>
+					<input type="radio" name="q5"value="opt3">Draw<br/>
+					<input type="radio" name="q5"value="opt4">Sketch <br/><br/>
+				</div><br/>
+					<input type="button" id="sub" value="submit" onclick="myfun()">
+					<input type="reset" id="res" value="Reset">
+			</form>
+		</section>
+		<section id="sec2">
+			<br/><br/><p id="p8"></p><br/>
+			<p id="p9"></p>
+			<input id="sagain" type="button" value="Start Again" onclick="mytime()">
+		</section>
+	</body>
+	<script>
+		function reset(arg)
+		{
+			for(var i=0;i<arg.length;i++)
+			{
+			arg[i].checked = false;
+			}
+		}
+		
+		function mytime()
+		{
+			document.getElementById("sec0").style.display="none";
+			document.getElementById("sec1").style.display="block";
+			document.getElementById("sec2").style.display="none";
+		
+			var ele1 = document.getElementsByName('q1');
+			reset(ele1)
+			var ele2 = document.getElementsByName('q2');
+			reset(ele2)
+			var ele3 = document.getElementsByName('q3');
+			reset(ele3)
+			var ele4 = document.getElementsByName('q4');
+			reset(ele4)
+			var ele5 = document.getElementsByName('q5');
+			reset(ele5)
+		
+			var cnt=59;
+			aa = setInterval(function()
+									{
+										document.getElementById("timer").innerHTML=cnt;
+										cnt--;
+										if(cnt < 0)
+										{
+										clearInterval(aa)
+										myfun();
+										}
+									},1000)
+		}
+	
+		function myfun()
+		{
+			ccount=0;
+			clearInterval(aa)
+			q1=document.getElementsByName("q1")
+			for(i=0;i<q1.length;i++)
+			{
+				if((q1[i].checked==true)&& (i==1))
+				{	
+					ccount++;			
+				}		
+			}	
+		
+			q2=document.getElementsByName("q2")
+			for(i=0;i<q2.length;i++)
+			{
+				if((q2[i].checked==true)&& (i==1))
+				{	
+				ccount++;		
+				}	
+			}
+		
+			q3=document.getElementsByName("q3")
+			for(i=0;i<q3.length;i++)
+			{
+				if((q3[i].checked==true)&& (i==3))
+				{	
+				ccount++;		
+				}		
+			}
+		
+			q4=document.getElementsByName("q4")
+			for(i=0;i<q4.length;i++)
+			{
+				if((q4[i].checked==true)&& (i==2))
+				{	
+				ccount++;	
+				}			
+			}
+		
+			q5=document.getElementsByName("q5")
+			for(i=0;i<q5.length;i++)
+			{
+				if((q5[i].checked==true)&& (i==1))
+				{	
+				ccount++;	
+				}	
+			}
+		
+			document.getElementById("sec2").style.display="block";
+			document.getElementById("sec1").style.display="none";
+			document.getElementById("sec0").style.display="none";
+			p8=document.getElementById("p8");
+			p9=document.getElementById("p9");
+			p8.innerHTML="correct answer counts = "+ccount;
+			p9.innerHTML="wrong answer counts = "+(5-ccount);
+		}
+	</script>
+</html>
