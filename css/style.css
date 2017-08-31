@@ -1,0 +1,124 @@
+﻿*{
+	margin:0px;
+	border:0px;
+}
+body{
+	width:900px;
+	height:auto;
+	margin:0px auto;
+	background-image:url(../bg0.jpg);
+}
+body header{
+	width:830px;
+	height:150px;
+	margin:0px auto;
+	background:radial-gradient(#4896C4,#FFA9A9);
+}
+body header img{
+	width:100px;
+	height:90px;
+	margin:10px 0px;
+	border:thin solid black;
+	float:left;
+}
+@font-face{
+	src:url(font/josefin-slab/JosefinSlab-Bold.ttf);
+	font-family:josefin;
+}
+@font-face{
+	src:url(font/open-sans/OpenSans-Regular.ttf);
+	font-family:opensans;
+}
+body header h1{
+	color:white;
+	-webkit-text-stroke:black 2px;
+	text-align:center;
+	float:left;
+	width:700px;
+	height:70px;
+	border:thin solid black;
+	margin:10px 10px 10px 10px;
+	padding:7px 0px 13px 0px;
+	font-family:josefin;
+	font-size:70px;
+}
+body header #p1{
+	float:left;
+	width:100px;
+	height:20px;
+	margin:5px 5px;
+	border:thin solid black;
+	background:yellow;
+}
+body header #p2{
+	float:right;
+	width:100px;
+	height:20px;
+	margin:5px;
+	border:thin solid black;
+	background:yellow;
+}
+#sec0{
+	width:830px;
+	height:200px;
+	margin:5px auto;
+	border:thin solid black;
+	background:lightblue;	  
+}
+#sec0 p{
+	margin:70px 10px 5px 200px;
+	float:right;
+	font-size:20px;
+	font-style:italics;
+}
+#sec1{
+	display:none;
+	width:830px;
+	height:700px;
+	margin:5px auto;
+	border:thin solid black;
+	background:lightblue;	  
+}
+#sec2{
+	display:none;
+	width:830px;
+	height:200px;
+	margin:5px auto;
+	background:lightblue;	  
+}
+#p3,#p4,#p5,#p6,#p7{
+    margin:5px 0px 0px 10px;
+	border-bottom:double black thick;
+}
+#p8,#p9{
+    margin:0px auto;
+	text-align:center;
+	font-family:opensans;
+}
+#que1,#que2,#que3,#que4,#que5{
+	padding:0px 0px 0px 40px;
+}
+#sub{
+	margin:0px 0px 0px 350px;
+	border:thin ridge black;
+		
+}
+#sagain,#startbtn,#sub{
+	margin:50px 50px 10px 360px;
+	border:thin ridge black;
+	font-weight:bold;
+	font-family:opensans;
+}
+#startbtn{
+	margin:70px 50px 10px 360px;
+}
+#res{
+	margin:50px 250px 10px 10px;
+	border:thin ridge black;
+	font-weight:bold;
+	font-family:opensans;	
+}
+input[type=button]:hover,input[type=reset]:hover{
+	cursor:pointer;
+	box-shadow:2px 2px 2px 2px black;
+}
